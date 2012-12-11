@@ -7,8 +7,13 @@ gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do # Add PostgreSQL "pg" gem to our production environment.
+  gem 'pg'
+end
 
+group :development do
+	gem 'sqlite3' # Move our sqlite gem into our development environment.
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
